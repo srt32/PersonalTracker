@@ -1,0 +1,29 @@
+<%= form_for(@poop) do |f| %>
+  <% if @poop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@poop.errors.count, "error") %> prohibited this poop from being saved:</h2>
+
+      <ul>
+      <% @poop.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :consistency %><br>
+    <%= f.number_field :consistency %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br>
+    <%= f.text_area :notes %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

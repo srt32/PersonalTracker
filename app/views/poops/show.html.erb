@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @poop.user_id %>
+</p>
+
+<p>
+  <strong>Consistency:</strong>
+  <%= @poop.consistency %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @poop.notes %>
+</p>
+
+<%= link_to 'Edit', edit_poop_path(@poop) %> |
+<%= link_to 'Back', poops_path %>

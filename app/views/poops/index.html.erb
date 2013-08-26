@@ -1,0 +1,31 @@
+<h1>Listing poops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Consistency</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poops.each do |poop| %>
+      <tr>
+        <td><%= poop.user_id %></td>
+        <td><%= poop.consistency %></td>
+        <td><%= poop.notes %></td>
+        <td><%= link_to 'Show', poop %></td>
+        <td><%= link_to 'Edit', edit_poop_path(poop) %></td>
+        <td><%= link_to 'Destroy', poop, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poop', new_poop_path %>
