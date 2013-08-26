@@ -1,5 +1,7 @@
 PersonalTracker::Application.routes.draw do
-  resources :poops
+  resources :users do
+    resources :poops
+  end
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
